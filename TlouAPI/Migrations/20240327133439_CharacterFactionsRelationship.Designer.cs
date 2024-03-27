@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TlouAPI.Data;
 
@@ -10,9 +11,11 @@ using TlouAPI.Data;
 namespace TlouAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20240327133439_CharacterFactionsRelationship")]
+    partial class CharacterFactionsRelationship
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -90,7 +93,7 @@ namespace TlouAPI.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Factions");
+                    b.ToTable("Faction");
                 });
 
             modelBuilder.Entity("TlouAPI.Models.Weapon", b =>
