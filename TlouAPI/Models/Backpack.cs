@@ -1,10 +1,14 @@
-﻿namespace TlouAPI.Models
+﻿using System.Text.Json.Serialization;
+
+namespace TlouAPI.Models
 {
     public class Backpack
     {
         public int Id { get; set; }
         public string Description { get; set; }
         public int CharacterId { get; set; }
+
+        [JsonIgnore]
         public Character Character { get; set; }
     }
 }
